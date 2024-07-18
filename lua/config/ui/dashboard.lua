@@ -44,8 +44,7 @@ vim.api.nvim_create_autocmd("UIEnter", {
             image:render()
             vim.cmd "silent! setl nowrite noma nonu nornu nobl acd ft=dashboard bh=wipe bt=nofile"
             vim.fn.matchadd("DashNvim", "NVIM 0.10.0")
-            vim.fn.matchadd("DashHelp", "https://neovim.io")
-            vim.fn.matchadd("DashFoot", "Type [^\"]*")
+            vim.fn.matchadd("DashHelp", "Type [^\"]*")
             vim.fn.matchadd("DashFoot", "Based [^\"]*")
         end
     end),

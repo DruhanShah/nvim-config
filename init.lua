@@ -54,5 +54,5 @@ require("lazy").setup("plugins", {
     },
 })
 
--- require("config.ui.dashboard")
--- require("config.ui.sidebar")
+require("config.ui.dashboard")
+require("config.ui.sidebar")

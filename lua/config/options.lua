@@ -53,9 +53,9 @@ local options = {
         showmode = false,
         shortmess = "astTWoOCF",
 
-        -- statusline = "%!v:lua.require('config.ui.statusline').statusline()",
-        -- tabline = "%!v:lua.require('config.ui.statusline').headerline()",
-        -- winbar = "%!v:lua.require('config.ui.statusline').winbar()",
+        statusline = "%!v:lua.require('config.ui.statusline').statusline()",
+        tabline = "%!v:lua.require('config.ui.statusline').headerline()",
+        winbar = "%!v:lua.require('config.ui.statusline').winbar()",
     },
 }
 
