@@ -14,13 +14,13 @@ local image = api.from_file("~/.config/nvim/splash.png", {
 })
 
 local splash_text = {}
-for i = 1, posy-2 do
+for i = 1, posy-1 do
     splash_text[i] = ""
 end
-splash_text[posy-2] = "NVIM 0.10.0"
-splash_text[posy-1] = "Editing text at the speed of thought"
-splash_text[posy] = "Type :h for help"
-for i = posy+1, vim.o.lines-6 do
+splash_text[posy-1] = "NVIM 0.10.0"
+splash_text[posy] = "Editing text at the speed of thought"
+splash_text[posy+1] = "Type :h for help"
+for i = posy+2, vim.o.lines-6 do
     splash_text[i] = ""
 end
 splash_text[vim.o.lines-4] = "Based on Elegant Emacs by Nicolas Rougier"
