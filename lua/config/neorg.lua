@@ -1,7 +1,3 @@
-local function update_date()
-    return os.date("%Y-%m-%dT%H:%M:%S")
-end
-
 local colors = require("config.ui.colorscheme")
 
 return {
@@ -30,7 +26,6 @@ return {
                     end },
                     { "description", "" },
                     { "categories",  "" },
-                    { "updated", update_date },
                 }
             },
         },
