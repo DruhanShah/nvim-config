@@ -3,7 +3,8 @@ return {
         "lervag/vimtex",
         init = require("config.vimtex").init(),
     },
-    -- {
-    --     dir = "~/Stuff/Lua-fu/neotex",
-    -- }
+    {
+        dir = "~/Stuff/Lua-fu/neotex",
+        config = true,
+    }
 }
