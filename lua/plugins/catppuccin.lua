@@ -24,9 +24,5 @@ return {
         opts = {
             theme = "dark",
         },
-        config = function(_, opts)
-            require("elegance").setup(opts)
-            -- vim.cmd.colorscheme "elegance"
-        end
     },
 }

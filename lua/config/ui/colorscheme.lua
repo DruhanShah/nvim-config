@@ -1,3 +1,2 @@
-local palette = require("elegance").colors
+local palette = require("elegance").get_palette("dark")
 return palette
-
