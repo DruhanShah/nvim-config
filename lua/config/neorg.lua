@@ -4,14 +4,6 @@ end
 
 local colors = require("config.ui.colorscheme")
 
-local function dim_percent(field)
-    if string.match(field, "inline") then
-        return colors.base == "#1e1e2f" and -60 or 10
-    else
-        return colors.base == "#1e1e2f" and 30 or 10
-    end
-end
-
 return {
     load = {
         ["core.defaults"] = {},
@@ -87,14 +79,15 @@ return {
                 dim = {
                     markup = {
                         verbatim = {
-                            percentage = dim_percent("inline"),
+                            percentage = colors.base == "#1e1e2e" and -60 or 10,
                             affect = "background",
                         },
                     },
                     tags = {
                         ranged_verbatim = {
                             code_block = {
-                                percentage = dim_percent("code"),
+                                percentage = colors.base == "#1e1e2e" and -60 or 10,
+                                affect = "background",
                             },
                         },
                     },
@@ -113,33 +106,33 @@ return {
                     },
                     headings = {
                         ["1"] = {
-                            title = "guifg="..colors.sky.." gui=bold",
-                            prefix = "guifg="..colors.sky.." gui=bold",
+                            title = "guifg="..colors.blue.." gui=bold",
+                            prefix = "guifg="..colors.blue.." gui=bold",
                         },
                         ["2"] = {
-                            title = "guifg="..colors.green.." gui=bold",
-                            prefix = "guifg="..colors.green.." gui=bold",
-                        },
-                        ["3"] = {
                             title = "guifg="..colors.teal.." gui=bold",
                             prefix = "guifg="..colors.teal.." gui=bold",
                         },
-                        ["4"] = {
-                            title = "guifg="..colors.lavender.." gui=bold",
-                            prefix = "guifg="..colors.lavender.." gui=bold",
+                        ["3"] = {
+                            title = "guifg="..colors.green.." gui=bold",
+                            prefix = "guifg="..colors.green.." gui=bold",
                         },
-                        ["5"] = {
+                        ["4"] = {
                             title = "guifg="..colors.yellow.." gui=bold",
                             prefix = "guifg="..colors.yellow.." gui=bold",
                         },
-                        ["6"] = {
+                        ["5"] = {
                             title = "guifg="..colors.peach.." gui=bold",
                             prefix = "guifg="..colors.peach.." gui=bold",
+                        },
+                        ["6"] = {
+                            title = "guifg="..colors.maroon.." gui=bold",
+                            prefix = "guifg="..colors.maroon.." gui=bold",
                         },
                     },
                     todo_items = {
                         done = "guifg="..colors.green.." gui=bold",
-                        undone = "guifg="..colors.overlay2.." gui=bold",
+                        undone = "guifg="..colors.overlay1.." gui=bold",
                         urgent = "guifg="..colors.red.." gui=bold",
                         on_hold = "guifg="..colors.blue.." gui=bold",
                         pending = "guifg="..colors.lavender.." gui=bold",
@@ -157,6 +150,11 @@ return {
                 workspace = "notes",
             },
         },
+        ["core.export.markdown"] = {
+            config = {
+                extensions = "all",
+            },
+        },
         ["core.ui.calendar"] = {},
         ["core.integrations.image"] = {},
         ["core.latex.renderer"] = {
@@ -164,6 +162,7 @@ return {
                 render_on_enter = true,
             },
         },
-        -- ["external.conceal-wrap"] = {},
+        ["external.conceal-wrap"] = {},
+        ["external.templates"] = {},
     },
 }

@@ -14,14 +14,13 @@ local options = {
         foldexpr = "v:lua.vim.treesitter.foldexpr()",
         foldtext = 'v:lua.require("config.utils").fold_text()',
         conceallevel = 2,
-        concealcursor = "nc",
+        concealcursor = "",
     },
     Spelling = {
         spell = false,
         spelllang = "en_us",
     },
     LineNumbers = {
-        number = true,
         cursorline = true,
         cursorlineopt = "number",
         signcolumn = "number",
@@ -33,11 +32,11 @@ local options = {
         expandtab = true,
         breakindent = true,
     },
-    CmdLine = {
+    Statuslines = {
         fillchars = {
-            stlnc = "🭻",
-            stl = "🭻",
-            wbr = "🭶",
+            stlnc = "─",
+            stl = "─",
+            wbr = "─",
             horiz = " ",
             horizup = " ",
             horizdown = " ",
@@ -53,6 +52,10 @@ local options = {
         cmdheight = 1,
         showmode = false,
         shortmess = "astTWoOCF",
+
+        statusline = "%!v:lua.require('config.ui.statusline').statusline()",
+        tabline = "%!v:lua.require('config.ui.statusline').headerline()",
+        winbar = "%!v:lua.require('config.ui.statusline').winbar()",
     },
 }
 

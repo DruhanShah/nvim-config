@@ -1,2 +1,3 @@
-return require("catppuccin.palettes").get_palette("mocha")
+local palette = require("elegance").colors
+return palette
 
