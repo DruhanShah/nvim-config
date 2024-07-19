@@ -1,5 +1,4 @@
 local M = {}
-local colors = require("config.ui.colorscheme")
 
 function M.mode_component()
     local mode = vim.api.nvim_get_mode().mode:sub(1, 1)
@@ -77,7 +76,7 @@ function M.filetype_component()
             icon, icon_hl = devicons.get_icon_color_by_filetype(ft, { default = true })
         end
     end
-    vim.cmd("hi! HeaderIcon guibg=".. colors.base .." guifg="..icon_hl)
+    vim.api.nvim_set_hl(0, "HeaderIcon", { fg = icon_hl })
 
     local modified = vim.bo.modified and " " or ""
 

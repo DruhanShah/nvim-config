@@ -1,4 +1,4 @@
-local colors = require("config.ui.colorscheme")
+local colors = require("elegance").get_palette()
 
 return {
     load = {
@@ -105,24 +105,24 @@ return {
                             prefix = "guifg="..colors.blue.." gui=bold",
                         },
                         ["2"] = {
-                            title = "guifg="..colors.teal.." gui=bold",
-                            prefix = "guifg="..colors.teal.." gui=bold",
+                            title = "guifg="..colors.text.." gui=bold",
+                            prefix = "guifg="..colors.text.." gui=bold",
                         },
                         ["3"] = {
-                            title = "guifg="..colors.green.." gui=bold",
-                            prefix = "guifg="..colors.green.." gui=bold",
+                            title = "guifg="..colors.text.." gui=bold",
+                            prefix = "guifg="..colors.text.." gui=bold",
                         },
                         ["4"] = {
-                            title = "guifg="..colors.yellow.." gui=bold",
-                            prefix = "guifg="..colors.yellow.." gui=bold",
+                            title = "guifg="..colors.text.." gui=bold",
+                            prefix = "guifg="..colors.text.." gui=bold",
                         },
                         ["5"] = {
-                            title = "guifg="..colors.peach.." gui=bold",
-                            prefix = "guifg="..colors.peach.." gui=bold",
+                            title = "guifg="..colors.text.." gui=bold",
+                            prefix = "guifg="..colors.text.." gui=bold",
                         },
                         ["6"] = {
-                            title = "guifg="..colors.maroon.." gui=bold",
-                            prefix = "guifg="..colors.maroon.." gui=bold",
+                            title = "guifg="..colors.text.." gui=bold",
+                            prefix = "guifg="..colors.text.." gui=bold",
                         },
                     },
                     todo_items = {

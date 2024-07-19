@@ -21,10 +21,6 @@ require("lazy").setup("plugins", {
     change_detection = {
         notify = false,
     },
-    dev = {
-        path = "~/Stuff/Lua-fu",
-        fallback = false,
-    },
     ui = {
         backdrop = 100,
         icons = {
@@ -56,3 +52,8 @@ require("lazy").setup("plugins", {
 
 require("config.ui.dashboard")
 require("config.ui.sidebar")
+
+vim.api.nvim_create_autocmd("User", {
+    pattern = "VeryLazy",
+    command = "colorscheme elegance-dark"
+})
