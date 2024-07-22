@@ -1,7 +1,7 @@
 
 local M = {}
 
-M.setup = function ()
+function M.setup()
     local cmp = require("cmp")
     local lspkind = require("lspkind")
     local cmp_autopairs = require("nvim-autopairs.completion.cmp")
@@ -21,12 +21,12 @@ M.setup = function ()
         },
         window = {
             completion = {
-                winhighlight = "FloatBorder:NormalFloat",
+                winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:PmenuSel",
                 col_offset = -3,
                 side_padding = 0,
             },
             documentation = {
-                winhighlight = "FloatBorder:NormalFloat",
+                winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:PmenuSel",
             },
         },
         mapping = {

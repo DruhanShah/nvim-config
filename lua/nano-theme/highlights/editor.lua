@@ -1,0 +1,106 @@
+local M = {}
+
+function M.get (C)
+    return {
+        Normal = { fg = C.text, bg = C.base },
+        NormalNC = { link = "Normal" },
+        NormalSB = {  link = "Normal" },
+        Text = { fg = C.text },
+        NonText = { fg = C.overlay1 },
+        Visual = { bg = C.surface0 },
+        VisualNC = { link = "Visual" },
+        RedrawDebugNormal = { reverse = true },
+
+        NormalFloat = { bg = C.mantle, fg = C.text },
+        FloatBorder = { fg = C.subtext0 },
+        FloatTitle = { fg = C.subtext1 },
+        FloatFooter = { link = "FloatTitle" },
+
+        MatchParen = { fg = C.peach, bg = C.surface1, bold = true },
+        IncSearch = { fg = C.crust, bg = C.peach },
+        Search = { fg = C.text, bg = C.overlay0 },
+        CurSearch = { fg = C.crust, bg = C.peach },
+        Substitute = { fg = C.red, bg = C.surface1 },
+        MoreMsg = { link = "NonText" },
+        ModeMsg = { link = "Normal" },
+        ErrorMsg = { fg = C.red, bold = true },
+        WarningMsg = { fg = C.peach, bold = true },
+        WildMenu = { bg = C.surface0 },
+
+        EndOfBuffer = { fg = C.base },
+        FoldColumn = { bg = C.base },
+        SignColumn = { fg = C.surface0 },
+        LineNr = { fg = C.base },
+        LineNrAbove = { link = "NonText" },
+        LineNrBelow = { link = "NonText" },
+        CursorLineNr = { fg = C.subtext1, bold = true },
+        CursorColumn = { bg = C.mantle },
+        CursorLine = { bg = C.mantle },
+        CursorLineSign = { link = "SignColumn" },
+        CursorLineFold = { link = "FoldColumn" },
+        ColorColumn = { bg = C.surface1 },
+
+        QuickFixLine = { bg = C.surface1, bold = true },
+        SpecialKey = { link = "NonText" },
+        Whitespace = { link = "NonText" },
+
+        Pmenu = { bg = C.crust, fg = C.subtext0 },
+        PmenuSel = { bg = C.overlay0, bold = true },
+        PmenuSbar = { bg = C.overlay0 },
+        PmenuThumb = { bg = C.overlay0 },
+
+        Cursor = { fg = C.crust, bg = C.text },
+        lCursor = { link = "Cursor" },
+        CursorIM = { link = "Cursor" },
+        TermCursor = { reverse = true },
+        TermCursorNC = {},
+
+        SpellBad = { undercurl = true, sp = C.red },
+        SpellCap = { undercurl = true, sp = C.yellow },
+        SpellRare = { undercurl = true, sp = C.green },
+        SpellLocal = { undercurl = true, sp = C.blue },
+
+        Directory = { bold = true },
+        Question = { bold = true },
+        Title = { bold = true, sp = C.text },
+
+        FoldMarker = { bg = C.green, fg = C.crust },
+        FoldedText = { bg = C.surface0, fg = C.text },
+        Folded = { fg = C.text },
+        Conceal = { fg = C.text },
+
+        StatusLine = { fg = C.subtext0, bg = C.base },
+        StatusLineNC = { link = "StatusLine" },
+        WinBar = { fg = C.text, bg = C.surface0 },
+        WinBarNC = { link = "WinBar" },
+        TabLine = { fg = C.text, bg = C.base },
+        TabLineSel = { fg = C.green, bg = C.crust, bold = true },
+        TabLineFill = { link = "TabLine" },
+        WinSeparator = { fg = C.overlay1, bg = C.base },
+        MsgSeparator = { link = "Normal" },
+        MsgArea = { link = "Normal" },
+        StatusCol = { bg = C.surface0, bold = true },
+
+        HeaderModeNO = { fg = C.crust, bg = C.subtext1, bold = true },
+        HeaderModeEX = { fg = C.crust, bg = C.blue, bold = true },
+        HeaderModeVI = { fg = C.crust, bg = C.lavender, bold = true },
+        HeaderModeVL = { fg = C.crust, bg = C.lavender, bold = true },
+        HeaderModeVB = { fg = C.crust, bg = C.lavender, bold = true },
+        HeaderModeIN = { fg = C.crust, bg = C.peach, bold = true },
+        HeaderModeRE = { fg = C.crust, bg = C.maroon, bold = true },
+        HeaderBlank = { fg = C.surface0, bg = C.surface0 },
+        HeaderWeak = { fg = C.subtext0, bg = C.surface0 },
+        HeaderSimple = { fg = C.text, bg = C.surface0 },
+        HeaderSolid = { fg = C.text, bg = C.surface0, bold = true },
+        HeaderDiagnositcERROR = { fg = C.red, bg = C.surface0, bold = true },
+        HeaderDiagnositcWARN = { fg = C.peach, bg = C.surface0, bold = true },
+        HeaderDiagnositcHINT = { fg = C.blue, bg = C.surface0, bold = true },
+        HeaderDiagnositcINFO = { fg = C.teal, bg = C.surface0, bold = true },
+
+        DashNvim = { fg = C.blue, bold = true },
+        DashHelp = { fg = C.subtext0 },
+        DashFoot = { fg = C.overlay1 },
+    }
+end
+
+return M

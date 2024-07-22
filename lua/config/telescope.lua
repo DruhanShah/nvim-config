@@ -11,12 +11,13 @@ local layout_strat = require("telescope.pickers.layout_strategies")
 
 layout_strat.vertico = function (picker, max_columns, max_lines, layout_config)
     local base = layout_strat.center(picker, max_columns, max_lines, layout_config)
-    base.results.line = base.results.line - 2
-    base.prompt.line = base.prompt.line - 2
+    base.results.line = base.results.line - 1
+    base.prompt.line = base.prompt.line - 1
     base.prompt.height = base.prompt.height
     base.prompt.width = vim.o.columns - 2
     base.prompt.border = { 1, 1, 1, 1 }
     base.prompt.borderchars = { " ", " ", " ", " ", " ", " ", " ", " " }
+    base.results.border = { 0, 1, 0, 1 }
     base.results.borderchars = { " ", " ", "─", " ", " ", " ", "─", "─" }
     base.results.title = ""
 

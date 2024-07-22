@@ -1,10 +1,13 @@
 return {
-    {
-        dir = "~/Stuff/Lua-fu/elegance",
-        name = "elegance",
-        priority = 1000,
-        opts = {
-            theme = "light",
+    "catppuccin/nvim",
+    enabled = false,
+    name = "catppuccin",
+    priority = 1000,
+    opts = {
+        integrations = {
+            mason = true,
         },
-    },
+        custom_highlights = {},
+        color_overrides = {},
+    }
 }

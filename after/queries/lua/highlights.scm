@@ -29,9 +29,9 @@
  (#set! conceal ":"))
 
 (if_statement "then" @keyword.conditional
-              (#set! conceal "⇒"))
+              (#set! conceal ""))
 (elseif_statement "then" @keyword.conditional
-              (#set! conceal "⇒"))
+              (#set! conceal ""))
 
 ((nil) @constant.builtin (#set! conceal "∅"))
 

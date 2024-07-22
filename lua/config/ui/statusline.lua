@@ -1,4 +1,5 @@
 local M = {}
+local colors = require("nano-theme").get_palette()
 
 function M.mode_component()
     local mode = vim.api.nvim_get_mode().mode:sub(1, 1)
@@ -19,7 +20,6 @@ function M.mode_component()
     }
 
     local hl = "HeaderMode" .. mode_dict[mode]
-
     return "%#".. hl .."#  ".. mode_dict[mode] .."  "
 end
 
@@ -47,11 +47,11 @@ function M.diagnostics_component()
             return nil
         end
         local name = names[level]
-        local hl = "Diagnostic" .. name:sub(1, 1) .. name:sub(2):lower()
+        local hl = "HeaderDiagnostic" .. name
         return string.format("%%#%s#%s %d", hl, icons[name], count)
     end)
 
-    local final = table.concat { table.concat(strings:totable(), " ") }
+    local final = table.concat(strings:totable(), " ")
     return final .. "   "
 end
 
@@ -76,13 +76,13 @@ function M.filetype_component()
             icon, icon_hl = devicons.get_icon_color_by_filetype(ft, { default = true })
         end
     end
-    vim.api.nvim_set_hl(0, "HeaderIcon", { fg = icon_hl })
+    vim.api.nvim_set_hl(0, "HeaderIcon", { bg = colors.surface0, fg = icon_hl })
 
     local modified = vim.bo.modified and " " or ""
 
     return table.concat {
-        string.format("%%#HeaderIcon# %s", icon),
         string.format("%%#HeaderSolid# %s%s", name, modified),
+        string.format("%%#HeaderIcon#  %s", icon),
     }
 end
 
@@ -90,31 +90,32 @@ function M.position_component()
     return "%#HeaderSimple# %l:%c "
 end
 
-function M.winbar()
-    if vim.bo.filetype == "query" then
-        vim.wo.winbar = "%#HeaderSidebar#%="
-    end
-
-    return "%="
-end
-
 function M.headerline()
-    return table.concat {
-        -- M.mode_component(),
+    local header = table.concat {
+        M.mode_component(),
         M.filetype_component(),
         "%#HeaderLine#%=",
         M.diagnostics_component(),
         M.position_component(),
     }
+    return header
 end
 
 function M.statusline()
-    return "%#StatusLine#%="
+    return "%="
+end
+
+function M.statuscol()
+    local ft = vim.bo.filetype
+    return ft
 end
 
 vim.api.nvim_create_autocmd({ "ModeChanged", "BufEnter", "CursorMoved", "CursorMovedI" }, {
     pattern = "*",
-    command = "redrawt",
+    command = "redrawstatus",
 })
+
+vim.o.statusline = "%{%v:lua.require('config.ui.statusline').statusline()%}"
+vim.o.winbar = "%{%v:lua.require('config.ui.statusline').headerline()%}"
 
 return M

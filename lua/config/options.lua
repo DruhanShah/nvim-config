@@ -23,20 +23,21 @@ local options = {
     LineNumbers = {
         cursorline = true,
         cursorlineopt = "number",
-        signcolumn = "number",
+        signcolumn = "no",
     },
     Indenting = {
         tabstop = 4,
         shiftwidth = 4,
         autoindent = true,
         expandtab = true,
+        linebreak = true,
         breakindent = true,
     },
     Statuslines = {
         fillchars = {
             stlnc = "─",
             stl = "─",
-            wbr = "─",
+            wbr = " ",
             horiz = " ",
             horizup = " ",
             horizdown = " ",
@@ -47,15 +48,12 @@ local options = {
             eob = " ",
         },
         laststatus = 3,
-        showtabline = 2,
+        showtabline = 0,
         cmdwinheight = 1,
         cmdheight = 1,
         showmode = false,
         shortmess = "astTWoOCF",
 
-        statusline = "%!v:lua.require('config.ui.statusline').statusline()",
-        tabline = "%!v:lua.require('config.ui.statusline').headerline()",
-        winbar = "%!v:lua.require('config.ui.statusline').winbar()",
     },
 }
 

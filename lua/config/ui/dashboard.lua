@@ -17,13 +17,13 @@ local splash_text = {}
 for i = 1, posy-1 do
     splash_text[i] = ""
 end
-splash_text[posy-1] = "NVIM 0.10.0"
+splash_text[posy-1] = "Neovim / M I C R ϴ"
 splash_text[posy] = "Editing text at the speed of thought"
 splash_text[posy+1] = "Type :h for help"
-for i = posy+2, vim.o.lines-6 do
+for i = posy+2, vim.o.lines-5 do
     splash_text[i] = ""
 end
-splash_text[vim.o.lines-4] = "Based on Elegant Emacs by Nicolas Rougier"
+splash_text[vim.o.lines-4] = "Based on GNU Emacs / N Λ N O by Nicolas Rougier"
 
 
 local g = vim.api.nvim_create_augroup("Dashboard", {})
@@ -43,9 +43,9 @@ vim.api.nvim_create_autocmd("UIEnter", {
             vim.api.nvim_put(utils.center(splash_text), "l", true, true)
             image:render()
             vim.cmd "silent! setl nowrite noma nonu nornu nobl acd ft=dashboard bh=wipe bt=nofile"
-            vim.fn.matchadd("DashNvim", "NVIM 0.10.0")
-            vim.fn.matchadd("DashHelp", "Type [^\"]*")
-            vim.fn.matchadd("DashFoot", "Based [^\"]*")
+            vim.fn.matchadd("DashNvim", "Neovim / M I C R ϴ")
+            vim.fn.matchadd("DashHelp", "Type :h for help")
+            vim.fn.matchadd("DashFoot", "Based on GNU Emacs / N Λ N O by Nicolas Rougier")
         end
     end),
 })

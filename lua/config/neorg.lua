@@ -1,4 +1,4 @@
-local colors = require("elegance").get_palette()
+local colors = require("nano-theme").get_palette()
 
 return {
     load = {
@@ -44,12 +44,12 @@ return {
                     },
                     heading = {
                         icons = {
-                            "",
-                            "",
-                            "",
-                            "",
-                            "󰜌",
-                            "✺",
+                            "󰲠",
+                            "󰲢",
+                            "󰲤",
+                            "󰲦",
+                            "󰲨",
+                            "󰲪",
                         }
                     },
                     todo = {
@@ -158,6 +158,5 @@ return {
             },
         },
         ["external.conceal-wrap"] = {},
-        ["external.templates"] = {},
     },
 }
