@@ -1,5 +1,9 @@
 local M = {}
 
+local function light_mode(C)
+    return C.base == "#eff1f5"
+end
+
 function M.get (C)
     return {
         Comment = { link = "NonText" },
@@ -86,10 +90,10 @@ function M.get (C)
         diffFile = { fg = C.blue },
         diffLine = { fg = C.overlay0 },
         diffIndexLine = { fg = C.teal },
-        DiffAdd = { bg = "#364144" },
-        DiffChange = { bg = "#25293d" },
-        DiffDelete = { bg = "#443245" },
-        DiffText = { bg = "#3e4b6c" },
+        DiffAdd = { bg = light_mode(C) and "#b6efca" or "#364144" },
+        DiffChange = { bg = light_mode(C) and "#c5d9fd" or "#25293d" },
+        DiffDelete = { bg = light_mode(C) and "#e4b2b5" or "#443245" },
+        DiffText = { bg = light_mode(C) and "#dedbec" or "#3e4b6c" },
     }
 end
 

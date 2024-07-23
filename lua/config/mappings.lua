@@ -7,7 +7,7 @@ key("n", "<C-j>", "<C-w>j")
 key("n", "<C-k>", "<C-w>k")
 key("n", "<C-l>", "<C-w>l")
 
-key("n", "<Esc>", "<Esc>:noh<CR>")
+key("n", "<Esc>", vim.cmd.noh)
 
 key("n", "H", "^")
 key("n", "J", "gj")

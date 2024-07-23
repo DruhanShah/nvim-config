@@ -53,11 +53,14 @@ return {
                         }
                     },
                     todo = {
+                        undone = {
+                            icon = " ",
+                        },
                         pending = {
                             icon = "󱦟",
                         },
                         uncertain = {
-                            icon = "",
+                            icon = "?",
                         },
                         cancelled = {
                             icon = "󰜺",
