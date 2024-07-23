@@ -53,7 +53,6 @@ local options = {
         cmdheight = 1,
         showmode = false,
         shortmess = "astTWoOCF",
-
     },
 }
 

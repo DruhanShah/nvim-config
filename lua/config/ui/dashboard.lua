@@ -25,7 +25,6 @@ for i = posy+2, vim.o.lines-5 do
 end
 splash_text[vim.o.lines-4] = "Based on GNU Emacs / N Λ N O by Nicolas Rougier"
 
-
 local g = vim.api.nvim_create_augroup("Dashboard", {})
 vim.api.nvim_create_autocmd('StdinReadPre', {
     group = g,

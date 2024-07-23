@@ -127,6 +127,10 @@ return {
                             title = "guifg="..colors.text.." gui=bold",
                             prefix = "guifg="..colors.text.." gui=bold",
                         },
+                        ["6"] = {
+                            title = "guifg="..colors.maroon.." gui=bold",
+                            prefix = "guifg="..colors.maroon.." gui=bold",
+                        },
                     },
                     todo_items = {
                         done = "guifg="..colors.green.." gui=bold",
