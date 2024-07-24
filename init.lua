@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.cmd.colorscheme "nano-light"
+vim.cmd.colorscheme "nano-dark"
 
 require("config.options")
 require("config.mappings")
@@ -26,27 +26,13 @@ require("lazy").setup("plugins", {
     ui = {
         backdrop = 100,
         icons = {
-            cmd = " ",
-            config = "",
-            event = " ",
-            ft = " ",
-            init = " ",
-            import = " ",
-            keys = " ",
-            lazy = "󰒲 ",
             loaded = " ",
             not_loaded = " ",
-            plugin = " ",
-            runtime = " ",
-            require = "󰢱 ",
-            source = " ",
-            start = " ",
-            task = "✔ ",
             list = {
                 "●",
-                "➜",
-                "★",
-                "‒",
+                "●",
+                "●",
+                "●",
             },
         },
     },
@@ -58,5 +44,5 @@ require("config.ui.statusline")
 
 vim.api.nvim_create_autocmd("User", {
     pattern = "VeryLazy",
-    command = "colorscheme nano-light"
+    command = "colorscheme nano-dark"
 })

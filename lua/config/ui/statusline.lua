@@ -23,29 +23,6 @@ function M.mode_component()
     return "%#".. hl .."#  ".. mode_dict[mode] .."  "
 end
 
-function M.mode_component()
-    local mode = vim.api.nvim_get_mode().mode:sub(1, 1)
-    local mode_dict = {
-        n = "NO",
-        v = "VI",
-        V = "VL",
-        ["\22"] = "VB",
-        s = "SE",
-        S = "SL",
-        ["\19"] = "SB",
-        i = "IN",
-        R = "RE",
-        c = "EX",
-        r = "PR",
-        ["!"] = "SH",
-        t = "TE",
-    }
-
-    local hl = "HeaderMode" .. mode_dict[mode]
-
-    return "%#".. hl .."#  ".. mode_dict[mode] .."  "
-end
-
 function M.diagnostics_component()
     if vim.startswith(vim.api.nvim_get_mode().mode, "i") then
         return ""

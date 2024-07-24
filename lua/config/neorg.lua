@@ -44,12 +44,12 @@ return {
                     },
                     heading = {
                         icons = {
-                            "󰲠",
-                            "󰲢",
-                            "󰲤",
-                            "󰲦",
-                            "󰲨",
-                            "󰲪",
+                            "󰗝",
+                            "󰗝",
+                            "󰗝",
+                            "󰗝",
+                            "󰗝",
+                            "󰗝",
                         }
                     },
                     todo = {
@@ -104,8 +104,8 @@ return {
                     },
                     headings = {
                         ["1"] = {
-                            title = "guifg="..colors.blue.." gui=bold",
-                            prefix = "guifg="..colors.blue.." gui=bold",
+                            title = "guifg="..colors.text.." gui=bold",
+                            prefix = "guifg="..colors.text.." gui=bold",
                         },
                         ["2"] = {
                             title = "guifg="..colors.text.." gui=bold",
