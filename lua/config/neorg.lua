@@ -11,8 +11,7 @@ return {
         ["core.dirman"] = {
             config = {
                 workspaces = {
-                    notes = "~/Notes",
-                    config = "~/.config",
+                    notes = "~/Notes/Norg",
                 },
                 default_workspace = "notes",
             },
@@ -44,12 +43,12 @@ return {
                     },
                     heading = {
                         icons = {
-                            "󰗝",
-                            "󰗝",
-                            "󰗝",
-                            "󰗝",
-                            "󰗝",
-                            "󰗝",
+                            "󰪥",
+                            "󰻃",
+                            "",
+                            "",
+                            "",
+                            "",
                         }
                     },
                     todo = {

@@ -5,6 +5,7 @@ return {
     },
     {
         dir = "~/Stuff/Lua-fu/neotex",
-        config = true,
+        opts = {},
+        enabled = false,
     }
 }

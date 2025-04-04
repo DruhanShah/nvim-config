@@ -33,12 +33,12 @@ function M.gtd(opts)
         prompt_title = "GTD list",
         finder = finders.new_table {
             results = {
-                { "Refile",        "~/Notes/index.norg" },
-                { "Now",           "~/Notes/now.norg" },
-                { "Later",         "~/Notes/later.norg" },
-                { "Someday/Maybe", "~/Notes/maybe.norg" },
-                { "Deadlines",     "~/Notes/deadlines.norg" },
-                { "Projects",      "~/Notes/Projects/" },
+                { "Refile",        "~/Notes/Norg/index.norg" },
+                { "Now",           "~/Notes/Norg/now.norg" },
+                { "Later",         "~/Notes/Norg/later.norg" },
+                { "Someday/Maybe", "~/Notes/Norg/maybe.norg" },
+                { "Deadlines",     "~/Notes/Norg/deadlines.norg" },
+                { "Projects",      "~/Notes/Norg/Projects/" },
             },
             entry_maker = function(entry)
                 return {
@@ -62,8 +62,12 @@ function M.gtd(opts)
         attach_mappings = function(prompt_bufnr)
             actions.select_default:replace(function()
                 local selection = action_state.get_selected_entry()
-                actions.close(prompt_bufnr)
-                vim.cmd(":e " .. selection.value)
+                if selection.display == "Projects" then
+                    builtin.find_files({ cwd = "~/Notes/Norg/Projects" })
+                else
+                    actions.close(prompt_bufnr)
+                    vim.cmd(":e " .. selection.value)
+                end
             end)
             return true
         end

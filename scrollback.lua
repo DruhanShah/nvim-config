@@ -3,8 +3,9 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+vim.cmd.colorscheme "nano-light"
+
 require("config.options")
-vim.opt.number = false
 require("config.mappings")
 
 local lazypath = vim.fn.stdpath("data") .. "lazy/lazy.nvim"
@@ -20,10 +21,13 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-local statusline = require("plugins.statusline")
-local colorscheme = require("plugins.catppuccin")
 require("lazy").setup({
-    statusline,
-    colorscheme,
     "nvim-tree/nvim-web-devicons",
+})
+
+require("config.ui.statusline")
+
+vim.api.nvim_create_autocmd("User", {
+    pattern = "VeryLazy",
+    command = "colorscheme nano-light"
 })

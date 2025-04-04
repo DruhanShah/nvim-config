@@ -5,7 +5,7 @@ return {
     },
     opts = {
         default_file_explorer = true,
-        columns = { "icon", "permissions" },
+        columns = { "icon", "permissions", "size" },
         delete_to_trash = true,
         skip_confirm_for_simple_edits = true,
         keymaps = {

@@ -90,17 +90,9 @@ function M.position_component()
     return "%#HeaderSimple# %l:%c "
 end
 
-function M.winbar()
-    if vim.bo.filetype == "query" then
-        vim.wo.winbar = "%#HeaderSidebar#%="
-    end
-
-    return "%="
-end
-
 function M.headerline()
     local header = table.concat {
-        M.mode_component(),
+        vim.w.curr and M.mode_component() or "",
         M.filetype_component(),
         "%#HeaderLine#%=",
         M.diagnostics_component(),
@@ -109,21 +101,22 @@ function M.headerline()
     return header
 end
 
-function M.statusline()
-    return "%="
-end
-
-function M.statuscol()
-    local ft = vim.bo.filetype
-    return ft
-end
-
 vim.api.nvim_create_autocmd({ "ModeChanged", "BufEnter", "CursorMoved", "CursorMovedI" }, {
     pattern = "*",
     command = "redrawstatus",
 })
+vim.api.nvim_create_autocmd({ "WinEnter", "BufEnter" }, {
+    callback = function()
+        vim.w.curr = true
+    end,
+})
+vim.api.nvim_create_autocmd({ "WinLeave", "BufLeave" }, {
+    callback = function()
+        vim.w.curr = false
+    end,
+})
 
-vim.o.statusline = "%{%v:lua.require('config.ui.statusline').statusline()%}"
+vim.o.statusline = "%="
 vim.o.winbar = "%{%v:lua.require('config.ui.statusline').headerline()%}"
 
 return M

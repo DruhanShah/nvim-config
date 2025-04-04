@@ -12,7 +12,7 @@ function M.get (C)
         RedrawDebugNormal = { reverse = true },
 
         NormalFloat = { bg = C.mantle, fg = C.text },
-        FloatBorder = { fg = C.subtext0 },
+        FloatBorder = { bg = C.mantle, fg = C.mantle },
         FloatTitle = { fg = C.subtext1 },
         FloatFooter = { link = "FloatTitle" },
 
